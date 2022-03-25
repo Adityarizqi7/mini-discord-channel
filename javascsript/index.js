@@ -18,53 +18,48 @@ function createVoice(point) {
 
 let displayVoice = point => {
 
-    let lengthChannel = channel.length;
-    let userLimit = 05;
+    let userLimit = 5;
 
+    let userRandom = () =>{
+        const characters = 'ABCDEFGHIJKLMNOPQRASTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+        let randomTemp = '';
+        let charLength = characters.length;
+        for (let i = 0; i < 15; i++) {
+            randomTemp += characters.charAt(Math.floor(Math.random() * charLength));
+        }
+        return randomTemp;
+    }
+
+    let loopGroup = (condition, init, limit, user, index) => {
+        if (channel[index] === condition) {
+            // Loop Channel
+            for (let l = init; l < limit; l++) {
+                console.log(`   \n  Kelompok ${channel[l]} - ${userLimit} User`);
+                // Loop User 
+                for (let k = 1; k <= user; k++) {
+                    console.log(`       ${k}.${userRandom()}`);
+                }
+            }
+        }
+    }
+
+    // Execute
     for (let j = 0; j < point; j++) {
         
-        console.log(`\n VOICE EXTENDED ${j+1}`);
+        console.log(`\nVOICE EXTENDED ${j+1}`);
 
-        if (channel[j] === 1) {
-            for (let l = 0; l < 50; l++) {
-                console.log(`   Kelompok ${channel[l]} - ${userLimit} User`);
-            }
-        }
-        if (channel[j] === 2) {
-            for (let l = 50; l < 100; l++) {
-                console.log(`   Kelompok ${channel[l]} - ${userLimit} User`);
-            }
-        }
-        if (channel[j] === 3) {
-            for (let l = 100; l < 150; l++) {
-                console.log(`   Kelompok ${channel[l]} - ${userLimit} User`);
-            }
-        }
-        if (channel[j] === 4) {
-            for (let l = 150; l < 200; l++) {
-                console.log(`   Kelompok ${channel[l]} - ${userLimit} User`);
-            }
-        }
-        if (channel[j] === 5) {
-            for (let l = 200; l < 250; l++) {
-                console.log(`   Kelompok ${channel[l]} - ${userLimit} User`);
-            }
-        }
-        if (channel[j] === 6) {
-            for (let l = 250; l < 300; l++) {
-                console.log(`   Kelompok ${channel[l]} - ${userLimit} User`);
-            }
-        }
-        if (channel[j] === 7) {
-            for (let l = 300; l < 350; l++) {
-                console.log(`   Kelompok ${channel[l]} - ${userLimit} User`);
-            }
-        }
-            
+        loopGroup(1, 0, 50, 5, j);
+        loopGroup(2, 50, 100, 5, j);
+        loopGroup(3, 100, 150, 5, j);
+        loopGroup(4, 150, 200, 5, j);
+        loopGroup(5, 200, 250,5, j);
+        loopGroup(6, 250, 300,5, j);
+        loopGroup(7, 300, 350, 5, j);            
     }
 
     return 0;
 }
 
+// Call Function
 createVoice(totalVoice);
 displayVoice(7);
