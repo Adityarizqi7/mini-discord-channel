@@ -1,0 +1,20 @@
+{
+  "name": "mini-discord-channel",
+  "version": "1.0.0",
+  "description": "Cloning mini discord chanel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adityarizqi7/mini-discord-channel.git"
+  },
+  "keywords": [],
+  "author": "Aditya Rizqi Ardhana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adityarizqi7/mini-discord-channel/issues"
+  },
+  "homepage": "https://github.com/Adityarizqi7/mini-discord-channel#readme"
+}
